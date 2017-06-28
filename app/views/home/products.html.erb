@@ -1,0 +1,22 @@
+<div class="container">
+	<h3>All Products</h3>
+	<table class="table table-sm table-hover">	
+		<thead>
+			<tr>
+    		<th>id</th>
+    		<th>Name</th>
+    		<th>Price</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @products.order("price DESC").each do |product| %>
+			<tr>
+				<td><%= product.id %></td>	
+				<td><%= product.name %></td>	
+				<td><%= product.price %></td>	
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
