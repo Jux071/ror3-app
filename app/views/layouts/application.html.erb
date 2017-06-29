@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ror3Repo</title>
+    <title>Ror3 Web Shop</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,15 +16,8 @@
 
   <body>
     <div class="container">
-  	  <nav class="navbar navbar-default">
-        <ul class="nav navbar-nav">
-  		  <li class="<%= 'active' if params[:action] == 'index' %>"><%= link_to 'Home', root_path%></li>  		
- 			  <li class="<%= 'active' if params[:action] == 'products' %>"><%= link_to 'Products', products_path%></li>
-        <li class="<%= 'active' if params[:action] == 'about_us' %>"><%= link_to 'About', about_path%></li>
-  		  </ul>
-      </nav>
-      
-    <%= yield %>
+  	  <%= render "layouts/navbar" %>
+      <%= yield %>
     </div>
   </body>
 </html>
