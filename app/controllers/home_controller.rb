@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 		@products = Product.all
 	end
 
-	def products
-		@products = Product.all
-	end
+	#def products
+	#	@products = Product.all
+	#end
 end

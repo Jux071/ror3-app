@@ -1,0 +1,31 @@
+<div class="container">
+	<h3>All Sellers <%= link_to 'Create new', new_seller_path %></h3>
+	<% unless flash[:notice].blank? %>
+		<div class="alert alert-success">
+			<p><%= flash[:notice] %></p>
+		</div>
+	<% end %>
+	<div class="row col-md-5">
+	<table class="table table-hover">	
+		<thead>
+			<tr>
+    		<th>id</th>
+    		<th>Name</th>
+    		<th>Rating</th>
+    		<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @sellers.each do |seller| %>
+			<tr>
+				<td><%= seller.id %></td>	
+				<td><%= link_to seller.name, seller_path(seller) %></td>	
+				<td><%= seller.rating %></td>	
+				<td><%= link_to 'Edit', edit_seller_path(seller), class: 'btn btn-sm btn-primary' %>
+				    <%= link_to 'Delete', seller_path(seller), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-sm btn-danger' %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
