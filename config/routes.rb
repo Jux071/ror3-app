@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-	root "home#index"
+  #get 'static_pages/home'
+  #get 'static_pages/about'
+  
+  get '/about' => 'static_pages#about'
 
-	#get '/test', controller: 'home', action 'test'
-	#get '/products' => 'home#products'
-	get '/about' => 'about#about_us'
+	#root "home#index"
+	root 'static_pages#home'
+
+	#get '/about' => 'about#about_us'
 
 	resources :products
 	resources :sellers
