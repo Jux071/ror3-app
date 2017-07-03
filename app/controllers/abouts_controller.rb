@@ -1,4 +1,4 @@
-class AboutController < ApplicationController
+class AboutsController < ApplicationController
 	def show
 		@about = 'Welcome to our small web shop. Here you can find various type of products, from needle to locomotive, as they said in this region. Even though we exist only few months, our customers are satisfied with us. If you have any concerns about products, not sure what you need, or you have any other shop related question, feel free to contact us.'		
 		@history = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat libero, tincidunt sit amet urna in, imperdiet laoreet mi. Vestibulum varius est lorem, vitae volutpat risus viverra vitae. Quisque ac diam velit. Nulla tincidunt fringilla malesuada. Aenean viverra orci nec tortor laoreet, vestibulum venenatis metus porttitor. Sed mattis tortor sed imperdiet porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec fringilla nisi eget augue tristique tristique. Fusce scelerisque rhoncus dolor at pulvinar. Cras nisi nisi, mattis non lacinia vitae, fringilla id erat. Nulla vehicula leo sed est interdum pharetra.'

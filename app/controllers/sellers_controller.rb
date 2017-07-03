@@ -1,4 +1,5 @@
 class SellersController < ApplicationController
+before_action :find_seller, { only: [:edit, :update, :show, :destroy] }
 
 	def index
 		@sellers = Seller.all
@@ -21,11 +22,11 @@ class SellersController < ApplicationController
 	end
 
 	def edit
-		@seller = Seller.find(params[:id])
+		
 	end
 
 	def update
-		@seller = Seller.find(params[:id])
+		
 	
 		if @seller.update(seller_params)
 			redirect_to sellers_path
@@ -35,11 +36,11 @@ class SellersController < ApplicationController
 	end
 
 	def show
-		@seller = Seller.find(params[:id])		
+			
 	end
 
 	def destroy
-		@seller = Seller.find(params[:id])
+	
 		@seller.destroy
 		flash[:notice] = 'Seller deleted succesfully'
 		redirect_to sellers_path
@@ -49,7 +50,10 @@ class SellersController < ApplicationController
 	def seller_params
 		params.require(:seller).permit(:name, :rating);
 	end
-
+  
+  def find_seller
+@seller = Seller.find(params[:id])
+end
 
 
 end

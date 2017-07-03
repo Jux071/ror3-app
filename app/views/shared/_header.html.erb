@@ -1,8 +1,8 @@
 <nav class="navbar navbar-default">
   <ul class="nav navbar-nav">
-  	<li class="<%= 'active' if controller?('static_pages') && action?('home') %>"><%= link_to 'Home', root_path%></li>  		
+  	<li class="<%= 'active' if controller?('home') && action?('index') %>"><%= link_to 'Home', root_path%></li>  		
  		<li class="<%= 'active' if controller?('products') && action?('index', 'edit', 'show', 'new') %>"><%= link_to 'Products', products_path %></li>
  		<li class="<%= 'active' if controller?('sellers') && action?('index', 'new', 'show', 'edit') %>"><%= link_to 'Sellers', sellers_path %></li>
-    <li class="<%= 'active' if controller?('static_pages') && action?('about') %>"><%= link_to 'About', about_path%></li>
+    <li class="<%= 'active' if controller?('abouts') && action?('show') %>"><%= link_to 'About', about_path%></li>
   </ul>
  </nav>
