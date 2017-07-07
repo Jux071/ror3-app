@@ -1,11 +1,19 @@
 <% provide(:title, "Seller Details") %>
+<div class='container'>
 <div class="row">
 	<div class="col-md-6">
-		<p><strong>Name:</strong></p>
-		<p><%= @seller.name %></p>
+		<p><strong>Name: </strong><%= @seller.name %></p>
 		<br>
-		<p><strong>Rating:</strong></p>
-		<p><%= @seller.price %></p>
+		<p><strong>Rating: </strong><%= @seller.rating %></p>
+		<p></p>
 		<br>
 	</div>
 </div>
+
+<%= render 'prods' %>
+
+
+
+</div>
+
+<%= link_to 'Back to sellers', sellers_path, class: 'btn btn-sm btn-primary' %>

@@ -1,9 +1,19 @@
-<tr>
+
+
+<div class="col-md-8">
+    
+      <h3>Products (<%= @products.count %>)</h3>
+      <table class = 'table'>
+       <% @products.each do |product| %>
+			<tr>
 	<td><%= link_to product.name, product_path(product) %></td>	
-	<td><%= product.price %></td>	
-	<td><%= link_to product.seller.name, seller_path(product.seller_id) %></td>
-	<td><%= link_to product.category.name, category_path(product.category_id) %></td>
-	<td><%= product.created_at.strftime("%Y-%d-%m") %></td>
+	<td><%= product.price %></td>		
+	<td><%= product.category.try(:name) %></td>
 	<td><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-sm btn-primary' %>
 			<%= link_to 'Delete', product_path(product), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-sm btn-danger' %></td>
 </tr>
+<% end %>
+      </table>
+      
+   
+  </div>

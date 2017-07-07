@@ -1,11 +1,13 @@
 class SellersController < ApplicationController
+
 before_action :find_seller, { only: [:edit, :update, :show, :destroy] }
+before_action :find_product, { only: [:edit, :update, :show]}
 
 	def index
 		@sellers = Seller.all
 	end
 
-  	def new
+  def new
 		@seller = Seller.new
 	end
 
@@ -22,11 +24,10 @@ before_action :find_seller, { only: [:edit, :update, :show, :destroy] }
 	end
 
 	def edit
-		
+			
 	end
 
-	def update
-		
+	def update		
 	
 		if @seller.update(seller_params)
 			redirect_to sellers_path
@@ -35,9 +36,9 @@ before_action :find_seller, { only: [:edit, :update, :show, :destroy] }
 		end
 	end
 
-	def show
-			
-	end
+	def show    
+    
+  end
 
 	def destroy
 	
@@ -52,8 +53,11 @@ before_action :find_seller, { only: [:edit, :update, :show, :destroy] }
 	end
   
   def find_seller
-@seller = Seller.find(params[:id])
-end
+		@seller = Seller.find(params[:id])
+	end
 
+  def find_product
+  	@products = @seller.products
+  end
 
 end

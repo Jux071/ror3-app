@@ -1,0 +1,15 @@
+<% provide(:title, "Category Details") %>
+<div class="row">
+	<div class="col-md-6">
+		<p><strong>Name:</strong></p>
+		<p><%= @category.name %></p>
+		<br>
+		<p><strong>Description:</strong></p>
+		<p><%= @category.description %></p>
+		<br>
+	</div>
+</div>
+
+<%= render 'products' %>
+
+<%= link_to 'Back to categories', categories_path, class: 'btn btn-sm btn-primary' %>
