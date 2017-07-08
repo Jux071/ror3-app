@@ -30,7 +30,7 @@ before_action :find_product, { only: [:edit, :update, :show]}
 	def update		
 	
 		if @seller.update(seller_params)
-			redirect_to sellers_path
+			render :show
 		else
 			render :edit
 		end

@@ -3,9 +3,9 @@ module ApplicationHelper
     controller.include?(params[:controller])
   end
 
-  def action?(*action)
-    action.include?(params[:action])
-  end
+  #def action?(*action)
+  #  action.include?(params[:action])
+  #end
 
   def full_title(page_title = '')
     base_title = "Ror3 Web Shop"
@@ -33,5 +33,9 @@ module ApplicationHelper
   def parse_attribute(attribute)
     attribute.to_s.capitalize.split('_').join(' ')
   end
+
+  def count_for(model, message: 'Total')
+    content_tag :h4, "#{message} #{model.count}"
+  end 
 
 end

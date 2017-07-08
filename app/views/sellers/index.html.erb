@@ -1,16 +1,19 @@
 <% provide(:title, "Sellers") %>
 <div class="container">
-	<h3>All Sellers <%= link_to 'Create new', new_seller_path %></h3>
+	<h3>Sellers <%= link_to 'Create new', new_seller_path, class: 'btn btn-sm btn-primary' %></h3>
+	<%= count_for @sellers%>
 	<% unless flash[:notice].blank? %>
 		<div class="alert alert-success">
 			<p><%= flash[:notice] %></p>
 		</div>
 	<% end %>
+	<br>
+	<div class="well well-sm" style="width: 40%"><h4>Seller details</h4></div>
+	
 	<div class="row col-md-5">
 	<table class="table table-hover">	
 		<thead>
 			<tr>
-    		<th>id</th>
     		<th>Name</th>
     		<th>Rating</th>
     		<th>Actions</th>
@@ -18,15 +21,7 @@
 		</thead>
 
 		<tbody>
-			<% @sellers.each do |seller| %>
-			<tr>
-				<td><%= seller.id %></td>	
-				<td><%= link_to seller.name, seller_path(seller) %></td>	
-				<td><%= seller.rating %></td>	
-				<td><%= link_to 'Edit', edit_seller_path(seller), class: 'btn btn-sm btn-primary' %>
-				    <%= link_to 'Delete', seller_path(seller), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-sm btn-danger' %></td>
-			</tr>
-			<% end %>
+			<%= render @sellers.order(rating: :desc) %>
 		</tbody>
 	</table>
 </div>
