@@ -35,7 +35,15 @@ module ApplicationHelper
   end
 
   def count_for(model, message: 'Total')
-    content_tag :h4, "#{message} #{model.count}"
+    content_tag :h4, "#{message}: #{model.count}"
   end 
+
+  def render_stars(value)
+      output = ''
+      if (1..5).include?(value.to_i)
+        value.to_i.times { output += '* ' }
+      end
+      output
+   end
 
 end

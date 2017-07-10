@@ -16,3 +16,8 @@
 .validation-error {
 	color: red;
 }
+
+.card-text {
+	text-align: justify;
+}
+

@@ -1,6 +1,6 @@
 <% provide(:title, "Category Details") %>
-
-<div class="panel panel-info">
+<div class="row col-md-7 col-md-offset-2">
+<div class="panel panel-primary">
   	<div class="panel-heading">
     	<h3 class="panel-title">Name</h3>
   	</div>
@@ -14,11 +14,13 @@
     	<%= @category.description %>
   	</div>
 	</div>
-  
+  </div>
+  <div class="row col-md-9 col-md-offset-1">
 	<%= render 'products' %>
 
-	<div class="panel panel-default">
+	<div class="panel panel-primary">
   	<div class="panel-body">
     	<%= link_to 'Back to categories', categories_path %>
   	</div>
 	</div>
+  </div>
