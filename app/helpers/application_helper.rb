@@ -3,10 +3,6 @@ module ApplicationHelper
     controller.include?(params[:controller])
   end
 
-  #def action?(*action)
-  #  action.include?(params[:action])
-  #end
-
   def full_title(page_title = '')
     base_title = "Ror3 Web Shop"
     if page_title.empty?

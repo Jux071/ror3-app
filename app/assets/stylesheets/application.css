@@ -21,3 +21,39 @@
 	text-align: justify;
 }
 
+#logo {
+  float: right;
+  margin-right: 10px;
+  color: blue;
+  letter-spacing: -1px;
+  height: 50px;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: right;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}

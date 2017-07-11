@@ -1,6 +1,8 @@
 <nav class="navbar navbar-default">
+<%= link_to image_tag("ror3-shop-logo.png", alt: "RoR Web Shop", id: "logo" ), root_path %>
+
   <ul class="nav navbar-nav">
-  	<li class="<%= 'active' if controller?('home') %>"><%= link_to 'Home', root_path%></li>  		
+  	<li class="<%= 'active' if controller?('home') %>"><%= link_to 'Home', root_path %></li>  		
  		<li class="<%= 'active' if controller?('products') %>"><%= link_to 'Products', products_path %></li>
  		<li class="<%= 'active' if controller?('sellers') %>"><%= link_to 'Sellers', sellers_path %></li>
     <li class="<%= 'active' if controller?('categories') %>"><%= link_to 'Categories', categories_path %></li>

@@ -1,38 +1,31 @@
 <% provide(:title, "Products") %>
 
 <div class="row col-md-9">
-	<div class="well well-sm"><h3>Products <%= link_to 'Add new', new_product_path, class: 'btn btn-sm btn-primary' %></h3></div>
-	<div class="well well-sm"><%= count_for @products%></div>
+	<div class="well well-sm"><h3>Products <%= link_to 'Add new', new_product_path, class: 'btn btn-sm btn-primary' %></h3>
+	<%= count_for @products%>
 	<% unless flash[:notice].blank? %>
 		<div class="alert alert-success">
 			<p><%= flash[:notice] %></p>
 		</div>
-	<% end %>
-		
-	
-	  
+	<% end %>	
+	</div>  
 
-<div class="panel panel-default">
-  
+<div class="panel panel-default">  
   <div class="panel-heading"><strong>Product details</strong></div>
+  	<table class="table table-hover table-striped">	
+			<thead>
+				<tr>
+	    		<th>Name</th>
+	    		<th>Price</th>
+	    		<th>Seller</th>
+	    		<th>Category</th>
+	    		<th>Created at</th>
+	    		<th>Actions</th>
+				</tr>
+			</thead>
 
-  <table class="table table-hover table-striped">	
-		<thead>
-			<tr>
-    		<th>Name</th>
-    		<th>Price</th>
-    		<th>Seller</th>
-    		<th>Category</th>
-    		<th>Created at</th>
-    		<th>Actions</th>
-			</tr>
-		</thead>
-
-		<tbody>
-			<%= render @products.order(price: :desc) %>
-		</tbody>
-	</table>
-</div>
-
-
+			<tbody>
+				<%= render @products.order(price: :desc) %>
+			</tbody>
+		</table>
 </div>

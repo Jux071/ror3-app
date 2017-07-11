@@ -3,5 +3,5 @@ class Product < ApplicationRecord
 	belongs_to :category
 
 	validates_presence_of :name, :price
-	validates :name, length: { in: 4..20 }
+	validates :name, length: { in: 4..30 }
 end

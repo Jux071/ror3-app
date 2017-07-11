@@ -1,10 +1,10 @@
 <%= form_for @seller do |form|%>	
-      <%= form.label :name %>
-    	<%= form.text_field :name, autofocus: :true, class: 'form-control' %>
-    	<br>
-    	<%= form.label :rating %>
-      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-    	<%= form.text_field :rating, class: 'form-control' %>
-    	<br>
-    	<%= form.submit 'Save', class: 'btn btn-block btn-default' %>
-    <% end %>
+  <%= form.label :name %>
+  <%= form.text_field :name, autofocus: :true, class: 'form-control' %>
+  <br>
+  <%= form.label :rating %>
+  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+  <%= form.text_field :rating, class: 'form-control' %>
+  <br>
+  <%= form.submit 'Save', class: 'btn btn-block btn-default' %>
+<% end %>
