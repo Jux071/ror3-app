@@ -1,16 +1,30 @@
-<nav class="navbar navbar-default">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <%= render 'shared/bootstrap' %>
+
+
+
+  <body>
+    <div class="container-fluid">
+  	  <nav class="navbar navbar-default">
 <%= link_to image_tag("ror3-shop-logo.png", alt: "RoR Web Shop", id: "logo" ), root_path %>
 
-  <ul class="nav navbar-nav">
-  	<li class="<%= 'active' if controller?('home') %>"><%= link_to 'Home', root_path %></li>  		
- 		<li class="<%= 'active' if controller?('products') %>"><%= link_to 'Products', products_path %></li>
- 		<li class="<%= 'active' if controller?('sellers') %>"><%= link_to 'Sellers', sellers_path %></li>
+  <ul class="nav navbar-nav navbar">
+    <li class="<%= 'active' if controller?('home') %>"><%= link_to 'Back to site', root_path %></li>      
+    <li class="<%= 'active' if controller?('products') %>"><%= link_to 'Products', admin_products_path %></li>
+    <li class="<%= 'active' if controller?('sellers') %>"><%= link_to 'Sellers', sellers_path %></li>
     <li class="<%= 'active' if controller?('categories') %>"><%= link_to 'Categories', categories_path %></li>
-    <li class="<%= 'active' if controller?('abouts') %>"><%= link_to 'About', about_path%></li>
-    <li class="<%= 'active' if controller?('users') %>"><%= link_to 'Sign Up', new_user_path %></li>  
-   
+  </ul> 
     
-    <% if logged_in? %>
+    <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -20,7 +34,7 @@
           <li><%= link_to "Settings", '#' %></li>
           <% if current_user.admin? %>
             <li><%= link_to "Dashboard", admin_dashboard_path %> </li>
-          <% end %>
+          
 
 
           <li class="divider"></li>
@@ -42,3 +56,10 @@
 
   </ul>
  </nav>
+
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
+
+  </body>
+</html>

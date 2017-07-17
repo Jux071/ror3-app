@@ -5,6 +5,6 @@
   <%= form.label :rating %>
   <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
   <%= form.text_field :rating, class: 'form-control' %>
-  <br>
-  <%= form.submit 'Save', class: 'btn btn-block btn-default' %>
+  <br>  
+  <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
 <% end %>

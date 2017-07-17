@@ -1,7 +1,7 @@
 class SellersController < ApplicationController
 
+before_action :authorize, { only: [:new, :update, :destroy, :edit] }
 before_action :find_seller, { only: [:edit, :update, :show, :destroy] }
-before_action :find_product, { only: [:edit, :update, :show]}
 
 	def index
 		@sellers = Seller.all
@@ -28,16 +28,16 @@ before_action :find_product, { only: [:edit, :update, :show]}
 	end
 
 	def update		
-	
+	  
 		if @seller.update(seller_params)
-			render :show
+			redirect_to @seller
 		else
 			render :edit
 		end
 	end
 
 	def show    
-    
+    @products = @seller.products
   end
 
 	def destroy
@@ -56,8 +56,4 @@ before_action :find_product, { only: [:edit, :update, :show]}
 		@seller = Seller.find(params[:id])
 	end
 
-  def find_product
-  	@products = @seller.products
-  end
-
-end
+ end

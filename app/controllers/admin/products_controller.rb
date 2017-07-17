@@ -1,7 +1,6 @@
-class ProductsController < ApplicationController	
+class Admin::ProductsController < Admin::BaseController	
 
-	before_action :authorize
-	before_action :find_product, { only: [:edit, :update, :show, :destroy] }
+before_action :find_product, { only: [:edit, :update, :show, :destroy] }
 
 	def index
 		@products = Product.all
@@ -16,7 +15,7 @@ class ProductsController < ApplicationController
 
 		if @product.save
 			flash[:notice] = 'Product created succesfully :)'
-			redirect_to products_path
+			redirect_to [:admin, @product]
 		else
 			render :new
 		end
@@ -30,7 +29,7 @@ class ProductsController < ApplicationController
 	def update
 			
 		if @product.update(product_params)
-			render :show
+			redirect_to [:admin, @product]
 		else
 			render :edit
 		end
@@ -44,7 +43,7 @@ class ProductsController < ApplicationController
 
 		@product.destroy
 		flash[:notice] = 'Product deleted succesfully'
-		redirect_to products_path
+		redirect_to admin_products_path
 	end
 
 	private 
@@ -55,4 +54,5 @@ class ProductsController < ApplicationController
 	def find_product
 		@product = Product.find(params[:id])
 	end
+
 end

@@ -1,0 +1,36 @@
+<% provide(:title, "Add New User") %>
+<div class = "row">
+  <div class = "col-md-4 col-md-offset-4">
+  	<div class="well well-sm"><h1 style="text-align: center";>Add new user</h1>  
+
+   	<%= form_for @user do |form|%>	
+  <%= form.label :username %>
+  <%= form.text_field :username, autofocus: :true, class: 'form-control' %>
+  <%= error_for :username, @user.errors do |message| %>
+  <strong><%= message %></strong>
+  <% end %>
+  <br>
+
+  <%= form.label :email %>
+  <div class="input-group">
+    <span class="input-group-addon">@</span>
+    <%= form.email_field :email, class: 'form-control' %>
+  </div>   	
+    	<%= error_for :email, @user.errors %>
+  <br>
+
+  <%= form.label :password, 'Password' %>
+  <%= form.password_field :password, class: 'form-control' %>
+  <%= error_for :password, @user.errors %>
+  <br>  
+   <%= form.label :password_confirmation, 'Password confirmation' %>
+  <%= form.password_field :password_confirmation, class: 'form-control' %>
+  <%= error_for :password_confirmation, @user.errors %>
+  <br> 
+  <%= form.submit 'Register', class: 'btn btn-block btn-default' %>
+<% end %>
+
+    </div>
+   
+  </div>
+</div>

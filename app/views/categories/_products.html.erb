@@ -18,8 +18,8 @@
 					<td><%= product.price %></td>		
 					<td><%= link_to product.seller.name, seller_path(product.seller_id) %></td>
 					<td><%= product.created_at.strftime("%Y-%d-%m") %></td>
-					<td><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-sm btn-primary' %>
-							<%= link_to 'Delete', product_path(product), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-sm btn-danger' %></td>
+					<td><%= link_to ' Edit', edit_product_path(product), class: 'glyphicon glyphicon-edit btn btn-sm btn-primary' %>
+							<%= link_to ' Delete', product_path(product), method: :delete, data: {confirm: "Are you sure?"}, class: 'glyphicon glyphicon-trash btn btn-sm btn-danger' %></td>
 				</tr>
 			<% end %>
 		</tbody>

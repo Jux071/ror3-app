@@ -40,6 +40,15 @@ module ApplicationHelper
         value.to_i.times { output += '* ' }
       end
       output
-   end
+  end
+
+  def display_flash(type)
+    if flash[type]
+      content_tag :div, flash[type], class: "alert alert-success"
+      content_tag :p, flash[type]
+    end
+    
+  end
+
 
 end

@@ -1,0 +1,25 @@
+<% provide(:title, "Product Details") %>
+<div class="row col-md-9 col-md-offset-1">
+  <div class="panel panel-primary">
+  	<div class="panel-heading">
+    	<h3 class="panel-title">Name</h3>
+  	</div>
+  	<div class="panel-body">
+    	<%= @product.name %>
+  	</div>
+  	<div class="panel-heading">
+    	<h3 class="panel-title">Price</h3>
+  	</div>
+  	<div class="panel-body">
+    	<%= @product.price %>
+  	</div>
+  	<div class="panel-heading">
+    	<h3 class="panel-title">Description</h3>
+  	</div>
+  	<div class="panel-body">
+    	<%= @product.description %>
+  	</div>
+	</div>	
+
+	<%= render 'back' %>
+</div>

@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 	
+	before_action :authorize, { only: [:new, :update, :destroy, :edit] }
 	before_action :find_category, { only: [:edit, :update, :show, :destroy] }
-	before_action :find_product, { only: [:edit, :update, :show]}
 	
 	def index
 		@categories = Category.all
@@ -30,14 +30,14 @@ class CategoriesController < ApplicationController
 	def update
 			
 		if @category.update(product_params)
-			render :show
+			redirect_to @category
 		else
 			render :edit
 		end
 	end
 
 	def show
-	  
+	  @products = @category.products
 	end
 
 	def destroy
@@ -55,11 +55,6 @@ class CategoriesController < ApplicationController
 def find_category
 @category = Category.find(params[:id])
 end
-
-def find_product
-	@products = @category.products
-end
-
 
 
 end
